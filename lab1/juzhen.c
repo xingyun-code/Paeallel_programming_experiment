@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#define N 1024//可以自主更改n值进行多次测试便于比较
 
 double timecount() {
     struct timespec ts;
@@ -27,7 +26,7 @@ void cache(double *Ju,double *a,double *result,int n){
 }
 
 int main(){
-    int n=N;
+    int n=1024;
     double *Ju=(double*)malloc(n*n*sizeof(double));
     double *a=(double*)malloc(n*sizeof(double));
     double *result1=(double*)calloc(n,sizeof(double));
