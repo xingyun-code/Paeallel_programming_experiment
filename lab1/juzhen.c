@@ -1,4 +1,4 @@
-#define _GNU_SOURCE//AI说这是需要添加的宏定义？貌似和Linux系统有关系
+#define _GNU_SOURCE//ai告诉我的宏定义？和linux系统有关
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -38,14 +38,14 @@ int main(){
             Ju[i*n+j]=i+j;
         }
     }
-    double start=get_time();
+    double start1=timecount();
     pingfan(Ju,a,result1,n);
-    double end = get_time();
-    printf("平凡算法的时间需求为：",end-start);
-    double start=get_time();
+    double end1 = timecount();
+    printf("平凡算法的时间需求为：%f秒\n",end1-start1);
+    double start2=timecount();
     cache(Ju,a,result2,n);
-    double end = get_time();
-    printf("优化算法的时间需求为：",end-start);
+    double end2 = timecount();
+    printf("优化算法的时间需求为：%f秒\n",end2-start2);
     free(Ju);
     free(a);
     free(result1);
