@@ -26,7 +26,7 @@ void cache(double *Ju,double *a,double *result,int n){
 }
 
 int main(){
-    int n=1024;
+    int n=2048;
     double *Ju=(double*)malloc(n*n*sizeof(double));
     double *a=(double*)malloc(n*sizeof(double));
     double *result1=(double*)calloc(n,sizeof(double));
@@ -40,11 +40,11 @@ int main(){
     double start1=timecount();
     pingfan(Ju,a,result1,n);
     double end1 = timecount();
-    printf("平凡算法的时间需求为：%f秒\n",end1-start1);
+    printf("平凡算法时间：%f秒, 校验值：%f\n", end1-start1, result1[0]);
     double start2=timecount();
     cache(Ju,a,result2,n);
     double end2 = timecount();
-    printf("优化算法的时间需求为：%f秒\n",end2-start2);
+    printf("优化算法时间：%f秒, 校验值：%f\n", end2-start2, result2[0]);
     free(Ju);
     free(a);
     free(result1);
